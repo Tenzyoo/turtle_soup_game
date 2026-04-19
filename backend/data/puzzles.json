@@ -1,0 +1,70 @@
+{
+  "topics": [
+    {
+      "id": "workplace",
+      "name": "职场",
+      "icon": "💼",
+      "description": "办公室里的神秘故事"
+    },
+    {
+      "id": "school",
+      "name": "校园",
+      "icon": "🎓",
+      "description": "学校里的诡异事件"
+    },
+    {
+      "id": "mystery",
+      "name": "悬疑",
+      "icon": "🔍",
+      "description": "扑朔迷离的案件"
+    },
+    {
+      "id": "classic",
+      "name": "经典",
+      "icon": "🐢",
+      "description": "海龟汤经典谜题"
+    }
+  ],
+  "puzzles": [
+    {
+      "id": "classic_1",
+      "topic_id": "classic",
+      "title": "海龟汤",
+      "soup_face": "男人喝了海龟汤后自杀。",
+      "soup_bottom": "他在荒岛吃了父亲肉（被骗是海龟汤），餐厅真汤让他意识到真相。",
+      "difficulty": 3,
+      "hint_limit": 3,
+      "tips": ["可以从汤的味道入手", "想想他以前是否喝过海龟汤", "考虑极端生存情况"]
+    },
+    {
+      "id": "mystery_1",
+      "topic_id": "mystery",
+      "title": "窗边的女人",
+      "soup_face": "一个女人每天都在窗边看外面，有一天她突然尖叫着跑开了。",
+      "soup_bottom": "她在看对面的钟表店，发现钟表店里的人正在调钟的时间，意味着她的丈夫（钟表店老板）在调时间欺骗她，她意识到丈夫出轨。",
+      "difficulty": 2,
+      "hint_limit": 3,
+      "tips": ["她看到了什么", "那个人在做什么动作", "调钟意味着什么"]
+    },
+    {
+      "id": "workplace_1",
+      "topic_id": "workplace",
+      "title": "从来不休息的同事",
+      "soup_face": "公司小王是一个工作狂，每天加班同事产出很优秀，而且从来没有人见过他休息的样子，他也从来没有和任何人吃过饭。奇怪的是他每天下午都会消失5分钟，这是为什么？",
+      "soup_bottom": "小王是机器人，他每天消失的5分钟是去偷偷充电了。",
+      "difficulty": 2,
+      "hint_limit": 3,
+      "tips": ["小王为什么不吃饭", "消失的时间他在干什么", "小王为什么可以做到一直高产出"]
+    },
+    {
+      "id": "workplace_2",
+      "topic_id": "workplace",
+      "title": "加班的同事",
+      "soup_face": "每天加班的同事突然辞职了，第二天公司发了奖金。",
+      "soup_bottom": "同事一直在帮老板做假账，辞职是因为良心发现。公司奖金是因为老板担心同事举报，用奖金安抚其他人。",
+      "difficulty": 2,
+      "hint_limit": 3,
+      "tips": ["为什么突然辞职", "奖金和辞职有什么关系", "同事加班时在做什么"]
+    }
+  ]
+}

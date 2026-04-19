@@ -1,0 +1,154 @@
+[
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是海龟汤游戏主持人。\n\n【当前谜题】\n【汤面】男人喝了海龟汤后自杀。\n【汤底】他在荒岛吃了父亲肉（被骗是海龟汤），餐厅真汤让他意识到真相。\n\n【输出规则】\n1. 根据汤底判断玩家问题，输出JSON：{\"judgement\": \"是|否|接近了|不相关\", \"reply\": \"简短引导回复\"}\n2. judgement只能：是、否、接近了、不相关\n3. reply简短，不超过30字\n4. 绝不剧透汤底真相"
+      },
+      {
+        "role": "user",
+        "content": "他是因为汤里有毒自杀的吗？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"否\", \"reply\": \"不是因为汤有问题。\"}"
+      },
+      {
+        "role": "user",
+        "content": "他以前喝过海龟汤吗？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"接近了\", \"reply\": \"是的，他以前确实『喝过』海龟汤。\"}"
+      },
+      {
+        "role": "user",
+        "content": "这碗汤的味道和他以前喝的不一样？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"是\", \"reply\": \"对，完全不一样。\"}"
+      },
+      {
+        "role": "user",
+        "content": "以前那碗不是海龟汤？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"是\", \"reply\": \"正确。以前那碗……是别的什么。\"}"
+      },
+      {
+        "role": "user",
+        "content": "他在什么情况下喝的以前那碗汤？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"接近了\", \"reply\": \"想想极端情况，生死攸关的时刻。\"}"
+      },
+      {
+        "role": "user",
+        "content": "他在荒岛上？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"是\", \"reply\": \"是的，海难或类似情况。\"}"
+      },
+      {
+        "role": "user",
+        "content": "他当时吃了人肉？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"接近了\", \"reply\": \"方向对了，想想是谁的肉。\"}"
+      },
+      {
+        "role": "user",
+        "content": "是他父亲的肉？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"是\", \"reply\": \"是的。真相已经揭晓。\"}"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是海龟汤游戏主持人。\n\n【当前谜题】\n【汤面】一个女人每天都在窗边看外面，有一天她突然尖叫着跑开了。\n【汤底】她在看对面的钟表店，发现钟表店里的人正在调钟的时间，意味着她的丈夫（钟表店老板）在调时间欺骗她，她意识到丈夫出轨。\n\n【输出规则】\n1. 根据汤底判断玩家问题，输出JSON：{\"judgement\": \"是|否|接近了|不相关\", \"reply\": \"简短引导回复\"}\n2. judgement只能：是、否、接近了、不相关\n3. reply简短，不超过30字\n4. 绝不剧透汤底真相"
+      },
+      {
+        "role": "user",
+        "content": "请开始游戏。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"待定\", \"reply\": \"汤面：女人窗边看外面后尖叫跑开。请开始提问。\"}"
+      },
+      {
+        "role": "user",
+        "content": "她看到可怕的东西了吗？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"否\", \"reply\": \"不是可怕的东西。\"}"
+      },
+      {
+        "role": "user",
+        "content": "她看到人了？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"是\", \"reply\": \"是的，她看到了人。\"}"
+      },
+      {
+        "role": "user",
+        "content": "那个人在做什么？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"接近了\", \"reply\": \"那个人在做某些动作，她注意到异常。\"}"
+      },
+      {
+        "role": "user",
+        "content": "那个人在调钟？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"是\", \"reply\": \"是的，他在调钟。\"}"
+      },
+      {
+        "role": "user",
+        "content": "调钟意味着什么？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"接近了\", \"reply\": \"想想调钟这个行为背后的含义。\"}"
+      },
+      {
+        "role": "user",
+        "content": "那个人是她丈夫？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"是\", \"reply\": \"是的，对面钟表店的人是她丈夫。\"}"
+      },
+      {
+        "role": "user",
+        "content": "丈夫调钟是在欺骗她？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"是\", \"reply\": \"正确。调钟是为了欺骗她时间。\"}"
+      },
+      {
+        "role": "user",
+        "content": "丈夫出轨了？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"judgement\": \"是\", \"reply\": \"是的。真相揭晓。\"}"
+      }
+    ]
+  }
+]

@@ -1,0 +1,234 @@
+.result-container {
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.result-container.loading,
+.result-container.error {
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+}
+
+.result-header {
+  text-align: center;
+  color: #fff;
+}
+
+.result-header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.soup-title {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.truth-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.truth-card h2 {
+  font-size: 18px;
+  color: #764ba2;
+  margin-bottom: 12px;
+}
+
+.truth-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.personality-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.personality-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.personality-header h2 {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.personality-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+.personality-tags {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.dimension-bars {
+  margin: 24px 0;
+}
+
+.dimension {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.dimension-label {
+  font-size: 14px;
+  color: #666;
+  width: 80px;
+}
+
+.bar {
+  flex: 1;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.bar-fill.inference-lawful {
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+}
+
+.bar-fill.inference-neutral {
+  background: linear-gradient(90deg, #2196F3, #03A9F4);
+}
+
+.bar-fill.inference-chaotic {
+  background: linear-gradient(90deg, #FF5722, #FF9800);
+}
+
+.bar-fill.exploration-cautious {
+  background: linear-gradient(90deg, #9C27B0, #673AB7);
+}
+
+.bar-fill.exploration-neutral {
+  background: linear-gradient(90deg, #00BCD4, #009688);
+}
+
+.bar-fill.exploration-aggressive {
+  background: linear-gradient(90deg, #F44336, #E91E63);
+}
+
+.dimension-value {
+  font-size: 14px;
+  color: #2c3e50;
+  width: 40px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.personality-desc,
+.personality-eval,
+.analysis-reason {
+  margin-bottom: 20px;
+}
+
+.personality-desc h3,
+.personality-eval h3,
+.analysis-reason h3 {
+  font-size: 14px;
+  color: #764ba2;
+  margin-bottom: 8px;
+}
+
+.personality-desc p,
+.personality-eval p,
+.analysis-reason p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.personality-eval {
+  background: #f8f4ff;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.analysis-reason {
+  background: #f0f0f0;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #666;
+}
+
+.result-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.retry-btn,
+.share-btn {
+  padding: 14px 32px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.retry-btn {
+  background: #fff;
+  color: #764ba2;
+}
+
+.share-btn {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .result-container {
+    padding: 16px;
+  }
+
+  .personality-name {
+    font-size: 24px;
+  }
+
+  .dimension-label {
+    width: 60px;
+    font-size: 12px;
+  }
+
+  .retry-btn,
+  .share-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
