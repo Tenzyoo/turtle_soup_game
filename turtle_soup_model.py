@@ -56,7 +56,6 @@ class TurtleSoupModel:
         if 'assistant' in raw.lower():
             parts = raw.split('assistant')
             last_part = parts[-1].strip()
-            # 如果还有 user，说明回复结束
             if 'user' in last_part.lower():
                 last_part = last_part.split('user')[0].strip()
             raw = last_part
@@ -66,36 +65,22 @@ class TurtleSoupModel:
         # 步骤2: 清理特殊标记
         raw = raw.replace('<|im_end|>', '').replace('<|im_start|>', '').strip()
 
-        # 步骤3: 跳过 thinking block（支持多种格式）
-        # Qwen3 thinking 格式：ImplOptions...Implementation 或 〇〇〇...〇
-        thinking_patterns = [
-            r'ImplOptions.*?Implementation',  # 中文 thinking 标签
-            r'〇〇〇.*?〇',          # 英文 thinking 标签
-            r'<\|begin_of_think\|>.*?<\|end_of_think\|>',  # 特殊标记
-        ]
-        for pattern in thinking_patterns:
-            raw = re.sub(pattern, '', raw, flags=re.DOTALL)
+        # 步骤3: 跳过 thinking block（简化处理）
+        thinking_markers = ['IMO_OPTIONS', 'ImplOptions', '〇〇〇', '<|begin_of_think|>', '']
 
-        # 如果还有 thinking 结束标记，取其后内容
-        thinking_end_markers = ['Implementation', '〇', '<|end_of_think|>']
-        for marker in thinking_end_markers:
-            if marker in raw:
-                # 取标记后的内容
-                idx = raw.rfind(marker)
-                raw = raw[idx + len(marker):].strip()
-
-        # 步骤4: 尝试找中文判断词开头的内容
-        judgement_keywords = ['是', '否', '接近了', '不相关']
-        for kw in judgement_keywords:
-            if kw in raw:
-                # 找到关键词，取从关键词开始
-                idx = raw.find(kw)
-                raw = raw[idx:].strip()
+        for marker in thinking_markers:
+            if marker and marker in raw:
+                idx = raw.find(marker)
+                raw = raw[idx + len(marker):]
                 break
 
-        # 步骤4: 清理空白
+        # 步骤4: 找第一个中文字符开始的内容
         raw = raw.strip()
-        # 只取第一行（避免多余内容）
+        chinese_match = re.search(r'[\u4e00-\u9fff]', raw)
+        if chinese_match:
+            raw = raw[chinese_match.start():]
+
+        # 只取第一行
         if '\n' in raw:
             raw = raw.split('\n')[0].strip()
 

@@ -74,19 +74,19 @@ def generate_reply(
         # 提取 reply
         reply_text = result.get("reply", "请继续提问") if isinstance(result, dict) else str(result)
 
-        # 清理 thinking block（如果有）
-        thinking_patterns = [
-            r'ImplOptions.*?Implementation',
-            r'〇〇〇.*?〇',
-        ]
-        for pattern in thinking_patterns:
-            reply_text = re.sub(pattern, '', reply_text, flags=re.DOTALL)
+        # 清理 thinking block（简化处理）
+        thinking_markers = ['IMO_OPTIONS', 'ImplOptions', '〇〇〇', '<|begin_of_think|>', '']
 
-        # 跳过 thinking 结束标记后的内容
-        for marker in ['Implementation', '〇']:
-            if marker in reply_text:
-                idx = reply_text.rfind(marker)
-                reply_text = reply_text[idx + len(marker):].strip()
+        for marker in thinking_markers:
+            if marker and marker in reply_text:
+                idx = reply_text.find(marker)
+                reply_text = reply_text[idx + len(marker):]
+                break
+
+        reply_text = reply_text.strip()
+        chinese_match = re.search(r'[\u4e00-\u9fff]', reply_text)
+        if chinese_match:
+            reply_text = reply_text[chinese_match.start():]
 
         # 清理判断词前缀（"是 - "、"否 - " 等）
         prefixes = ["是 - ", "否 - ", "接近了 - ", "不相关 - ", "是。", "否。", "接近了。", "不相关。", "是 ", "否 "]

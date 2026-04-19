@@ -11,7 +11,7 @@ from config import ANTHROPIC_API_KEY, ANTHROPIC_BASE_URL, LOGIC_MODEL
 from anthropic import Anthropic
 
 # 加载人格定义
-PERSONALITY_FILE = os.path.join(os.path.dirname(__file__), '../personal.json')
+PERSONALITY_FILE = os.path.join(os.path.dirname(__file__), '../../personal.json')
 with open(PERSONALITY_FILE, 'r', encoding='utf-8') as f:
     PERSONALITY_DATA = json.load(f)
 
